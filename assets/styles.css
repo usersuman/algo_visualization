@@ -1,0 +1,76 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a2e;
+        --light-bg-color: #16213e;
+        --lighter-bg-color: #0f3460;
+        --bs-primary: #e94560;
+
+        --text-color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #faf3f3;
+        --light-bg-color: #e1e5ea;
+        --lighter-bg-color: #a7bbc7;
+        --bs-primary: #da7f8f;
+
+        --text-color: black;
+    }
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.vertical-bar {
+    background-color: #ff11be;
+    /* background-color: #8f8cc9; */
+    display: inline-block;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#sidebar-control-collapsed {
+    left: 10px;
+    bottom: 10px;
+    display: none;
+    z-index: 100000;
+}
+
+#sidebar {
+    z-index: 10000;
+    background-color: var(--light-bg-color) !important;
+    color: var(--text-color);
+}
+
+path {
+    fill: var(--bs-primary);
+}
+
+.border {
+    border: 1px solid var(--lighter-bg-color) !important;
+}
+
+.bg-light {
+    background-color: var(--light-bg-color) !important;
+}
+
+.btn-light {
+    border: 1px solid var(--lighter-bg-color) !important;
+    background-color: var(--light-bg-color) !important;
+}
+
+.form-range::-moz-range-thumb {
+    background-color: var(--bs-primary);
+}
