@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../bootstrap.css" rel="stylesheet">
+    <!--<link rel="shortcut icon" href="../assets/favicon.png" type="image/png">-->
+    <title>Algorithms Visualization</title>
+   <!-- <link rel="stylesheet" href="../algo_visualization/style.css">-->
+</head>
+
+<body>
+    <button class="btn position-absolute position-fixed" id="sidebar-control-collapsed">
+       <svg style="width: 28.5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
+            <path
+                d="M11.109,3L11.109,3C9.78,3,8.988,4.481,9.725,5.587L14,12l-4.275,6.413C8.988,19.519,9.78,21,11.109,21h0 c0.556,0,1.076-0.278,1.385-0.741l4.766-7.15c0.448-0.672,0.448-1.547,0-2.219l-4.766-7.15C12.185,3.278,11.666,3,11.109,3z"
+                fill="#198754" /></svg>
+    </button>
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <div class="col-12">
+                <div id="toast"
+                    class="toast position-absolute top-0 start-50 translate-middle-x text-white bg-success my-2"
+                     role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            <b>Success..</b> Operation finished!
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar" class="col-6 col-md-3 col-lg-2 bg-light position-fixed">
+                <div style="height: 80px;" class="col">
+                    <h3 class="text-center mt-3" style="font-family: Georgia, 'Times New Roman', Times, serif;color:rgb(71, 68, 68)">
+                        Algorithm Visualization</h3>
+                    <hr>
+                </div>
+
+                <div style="height: calc(100vh - 95px - 60px)" class="row align-items-center">
+                    <div class="col">
+                        <div class="p-4">
+                            <ul class="list-unstyled">
+                                <li class="my-3">
+                                    <h6 class="text-left">Sorting Algorithms</h6>
+                                </li>
+                                <li class="my-1 active">
+                                    <a class="text-decoration-none link-secondary" href="./bubblesort/">Bubble sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary"href="../heapsort/">Heap sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary "href="../insertionsort/">Insertion sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary" href="../mergesort/">Merge sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary" href="../quicksort/">Quicksort</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div style="height: 60px" class="row ">
+                        <!--<div class="row ms-2"
+                            style="position: relative; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+                            <div class="col text-end">-->
+                                <button class="btn border-top" id="sidebar-control">
+                                    <svg style="width: 28.5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="#000">
+                                        <path
+                                            d="M13.893,21L13.893,21c1.329,0,2.122-1.481,1.385-2.587L11.003,12l4.275-6.413C16.015,4.481,15.222,3,13.893,3h0 c-0.556,0-1.076,0.278-1.385,0.741l-4.766,7.15c-0.448,0.672-0.448,1.547,0,2.219l4.766,7.15C12.817,20.722,13.337,21,13.893,21z"
+                                            fill="#6d767e" />
+                                    </svg>
+                                </button>
+                </div>
+
+            </div>
+            <div id="main" class="col-12 col-md-9 col-lg-10 offset-lg-2 offset-md-3 h-100">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="text-center" style="font-family: 'Times New Roman', Times, serif;">How
+                                    does
+                                    <u>Bubble Sort</u> work anyways?</h1>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-12 col-md-8 col-lg-7 mx-auto">
+                                        <p class="text-left border-start border-5 ps-3 rounded">
+                                            <q>
+                                                Bubble sort, sometimes referred to as sinking sort, is a simple
+                                                sorting
+                                                algorithm that repeatedly steps through the list, compares adjacent
+                                                elements
+                                                and
+                                                swaps them if they are in the wrong order
+                                            </q> –
+                                            <em>Wikipedia</em>
+                                        </p>
+                                        <h5>Sounds easy?</h5>
+                                        <p>
+                                            It is! And to be honest there isn't much more to it, so let's look right
+                                            at the code. It should be very self explanatory. Switch the first
+                                            and second item if the second one is smaller. Then move on
+                                            and check if the second element is smaller than the third. If it is
+                                            switch them again... This is why in the visualzation above the ordered
+                                            elements start to apear mostly at the left and the right side at first.
+                                        </p>
+                                        <code>
+                                            <pre class="bg-light p-3 rounded">
+ procedure bubbleSort(A : list of sortable items)
+    n := length(A)
+    repeat
+        swapped := false
+        for i := 1 to n-1 inclusive do
+            <em>/* if this pair is out of order */</em>
+            if A[i-1] > A[i] then
+                <em>/* swap them and remember something changed */</em>
+                swap(A[i-1], A[i])
+                swapped := true
+            end if
+        end for
+    until not swapped
+ end procedure</pre>
+                                        </code>
+
+                                        <div class="alert alert-dark border-0" role="alert">
+                                            <h4 class="alert-heading">Questions to think about</h4>
+                                            <ol>
+                                                <li>What runtime does bubble sort have?
+                                                    <ul>
+                                                        <li>
+                                                            on average and
+                                                        </li>
+                                                        <li>
+                                                            worst case
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>Can you implement it yourself?</li>
+                                            </ol>
+                                        </div>
+                                        <h4>Answers</h4>
+                                        <ol>
+                                            <li>
+                                                <p>
+                                                    Let's look at the pseudocode in more detail. There are two loops
+                                                    in the
+                                                    function. One in line 3 and the for loop in line 5. Both of them
+                                                    iterate
+                                                    roughly over the whole array (or list), so we can say it takes
+                                                    <span style="font-family: 'Times New Roman', Times, serif;">n *
+                                                        n</span>
+                                                    operations. Or if we simplify <span
+                                                        style="font-family: 'Times New Roman', Times, serif;">O(n<sup>2</sup>)</span>
+                                                    operations. We disregard
+                                                    simple one time operations because in big O notation we only
+                                                    want a
+                                                    rough estimate of the runtime. And loops are usually the
+                                                    structures that
+                                                    add the most impact to the execution duration.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    I hope it wasn't such a burden for you, but it should have been
+                                                    straight forward. Here are some data sets you can test your
+                                                    algorithm on:
+                                                    <ul>
+                                                        <li>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</li>
+                                                        <li>10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0</li>
+                                                        <li>5, 5, 5, 2, 2, 2, 9, 9, 9, 5, 6, 1</li>
+                                                        <li>6, 4, 8, 3, 8, 4, 9, 5, 0, 4, 2, 6, 8, 0, 6, 4, 3, 3, 5,
+                                                            7</li>
+                                                    </ul>
+                                                </p>
+                                                <p>
+                                                    <h6>The outcomes should be:</h6>
+                                                    <ul>
+                                                        <li>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</li>
+                                                        <li>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</li>
+                                                        <li>1, 2, 2, 2, 5, 5, 5, 5, 6, 9, 9, 9</li>
+                                                        <li>0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6, 7, 8, 8, 8,
+                                                            9</li>
+                                                    </ul>
+
+                                                </p>
+                                                <hr>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script src="../bootstrap.js"></script>
+    <script src="main.js"></script>
+    <!--<script src="../assets/style.js"></script>-->
+</body>
+
+</html>
