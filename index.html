@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/bootstrap_bundle.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon1.jpg" type="image/jpg">
+    <title>Algorithms Visualization</title>
+   <!-- <link rel="stylesheet" href="../algo_visualization/style.css">-->
+</head>
+
+<body>
+    <button class="btn position-absolute position-fixed" id="sidebar-control-collapsed">
+       <svg style="width: 28.5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000">
+            <path
+                d="M11.109,3L11.109,3C9.78,3,8.988,4.481,9.725,5.587L14,12l-4.275,6.413C8.988,19.519,9.78,21,11.109,21h0 c0.556,0,1.076-0.278,1.385-0.741l4.766-7.15c0.448-0.672,0.448-1.547,0-2.219l-4.766-7.15C12.185,3.278,11.666,3,11.109,3z"
+                fill="#198754" /></svg>
+    </button>
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <div class="col-12">
+                <div id="toast"
+                    class="toast position-absolute top-0 start-50 translate-middle-x text-white bg-success my-2"
+                     role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            <b>Success..</b> Operation finished!
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                            aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar" class="col-6 col-md-3 col-lg-2 bg-light position-fixed">
+                <div style="height: 80px;" class="col">
+                    <h3 class="text-center mt-3" style="font-family: Georgia, 'Times New Roman', Times, serif;color:rgb(71, 68, 68)">
+                        Algorithm Visualization</h3>
+                    <hr>
+                </div>
+
+                <div style="height: calc(100vh - 95px - 60px)" class="row align-items-center">
+                    <div class="col">
+                        <div class="p-4">
+                            <ul class="list-unstyled">
+                                <li class="my-3">
+                                    <h6 class="text-left">Sorting Algorithms</h6>
+                                </li>
+                                <li class="my-1 active">
+                                    <a class="text-decoration-none link-secondary" href="./bubblesort/">Bubble sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary"href="./heapsort/">Heap sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary "href="./insertionsort/">Insertion sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary" href="./mergesort/">Merge sort</a>
+                                </li>
+                                <li class="my-1">
+                                    <a class="text-decoration-none link-secondary" href="./quicksort/">Quicksort</a>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div style="height: 60px" class="row ">
+                        <!--<div class="row ms-2"
+                            style="position: relative; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+                            <div class="col text-end">-->
+                                <button class="btn border-top" id="sidebar-control">
+                                    <svg style="width: 28.5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="#000">
+                                        <path
+                                            d="M13.893,21L13.893,21c1.329,0,2.122-1.481,1.385-2.587L11.003,12l4.275-6.413C16.015,4.481,15.222,3,13.893,3h0 c-0.556,0-1.076,0.278-1.385,0.741l-4.766,7.15c-0.448,0.672-0.448,1.547,0,2.219l4.766,7.15C12.817,20.722,13.337,21,13.893,21z"
+                                            fill="#6d767e" />
+                                    </svg>
+                                </button>
+                </div>
+
+            </div>
+            <div id="main" style="background:linear-gradient(23deg, rgba(77, 245, 16, 0.11) 0%, #fff 100%);">
+            <section class="cd-position-relative cd-z-index-1">
+                <div class="cd-position-relative cd-z-index-2">
+                  <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="my-3 text-success shadow rounded-2 text-center" style="width:330px;" ><h2>ALG0RITHM VISUALIZER</h2>
+                    <p>visualize algorithms for better understanding</p></div>
+                    <div class="p-2 text-success shadow rounded-2">
+                        <p>VISUALIZES MOSTLY USED SORTING ALGORITHMS : </p>
+                                <ul>
+                                    <li>
+                                        BUBBLE SORT
+                                    </li>
+                                    <li>
+                                        HEAP SORT
+                                    </li>
+                                    <li>
+                                      INSERTION SORT
+                                  </li>
+                                  <li>
+                                    MERGE SORT
+                                </li>
+                                <li>
+                                  QUICK SORT
+                              </li>
+                                </ul>
+                            </li>
+                            <p class="text-center">choose from the sidebar</p>
+                        </ol>
+                    </div>
+                </div>
+                </div>
+                <figure class="bg-decoration cd-z-index-1" aria-hidden="true">
+                  <svg class="bg-decoration__svg" viewBox="0 0 1920 450" fill="none">
+                    <rect opacity="0.5" x="1350" y="-137.009" width="363.982" height="509.072" transform="rotate(-30 1350 -137.009)"
+                      fill="url(#bg-decoration-v1-fx-3-linear-1)" />
+                    <rect opacity="0.5" x="1152" y="-232.009" width="363.982" height="509.072" transform="rotate(-30 1152 -232.009)"
+                      fill="url(#bg-decoration-v1-fx-3-linear-2)" />
+                    <rect opacity="0.5" x="1065" y="-301.009" width="363.982" height="509.072" transform="rotate(-30 1065 -301.009)"
+                      fill="url(#bg-decoration-v1-fx-3-linear-3)" />
+                    <circle opacity="0.5" cx="1473" cy="78" r="36" fill="url(#bg-decoration-v1-fx-3-radial-1)" />
+                    <path opacity="0.5" d="M1754.79 180.766L1419 383.022L1688.02 449.788L1754.79 180.766Z"
+                      fill="url(#bg-decoration-v1-fx-3-linear-4)" />
+                    <g opacity="0.5" filter="url(#bg-decoration-v1-fx-3-blur-1)">
+                      <path d="M1297 87.5346L1356.34 51.8093L1344.53 99.3439L1297 87.5346Z" fill="var(--bg-decoration-color-2)" />
+                    </g>
+                    <defs>
+                      <filter id="bg-decoration-v1-fx-3-blur-1" x="1292" y="35" width="69.3439" height="69.3439" filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+                      </filter>
+                      <linearGradient id="bg-decoration-v1-fx-3-linear-1" x1="1531.99" y1="-137.009" x2="1531.99" y2="372.063"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="var(--bg-decoration-color-4)" />
+                        <stop offset="1" stop-color="var(--bg-decoration-color-3)" stop-opacity="0" />
+                      </linearGradient>
+                      <linearGradient id="bg-decoration-v1-fx-3-linear-2" x1="1333.99" y1="-232.009" x2="1333.99" y2="277.063"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="var(--bg-decoration-color-2)" />
+                        <stop offset="1" stop-color="var(--bg-decoration-color-1)" stop-opacity="0" />
+                      </linearGradient>
+                      <linearGradient id="bg-decoration-v1-fx-3-linear-3" x1="1246.99" y1="-301.009" x2="1246.99" y2="208.063"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="var(--bg-decoration-color-2)" />
+                        <stop offset="1" stop-color="var(--bg-decoration-color-4)" stop-opacity="0" />
+                      </linearGradient>
+                      <radialGradient id="bg-decoration-v1-fx-3-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(1473 78) rotate(90) scale(36)">
+                        <stop stop-color="var(--bg-decoration-color-3)" stop-opacity="0" />
+                        <stop offset="1" stop-color="var(--bg-decoration-color-3)" />
+                      </radialGradient>
+                      <linearGradient id="bg-decoration-v1-fx-3-linear-4" x1="1452.38" y1="248.511" x2="1721.41" y2="315.277"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="var(--bg-decoration-color-2)" />
+                        <stop offset="1" stop-color="var(--bg-decoration-color-2)" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </figure>
+              </section>
+            </div>
+        </div>
+    </div>
+   <script src="./assets/bootstrap_bundle.css"></script>
+    <script src="./assets/style.js"></script>
+</body>
+
+</html>
